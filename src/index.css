@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'gotham';
+  src: url('./assets/fonts/Gotham-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gotham-bold';
+  src: url('./assets/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gotham-black';
+  src: url('./assets/fonts/Gotham-Black.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gotham-ultra';
+  src: url('./assets/fonts/Gotham-Ultra.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nasalization';
+  src: url('./assets/fonts/Nasalization-Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'monument';
+  src: url('./assets/fonts/MonumentExtended-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'monument-bold';
+  src: url('./assets/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'linotype-pen';
+  src: url('./assets/fonts/Linotype-Feltpen-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'linotype-pen-regular';
+  src: url('./assets/fonts/Linotype-Feltpen-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer components {
+  .app {
+    @apply min-h-screen w-full bg-[#201e26]
+  }
+}
