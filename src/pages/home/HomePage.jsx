@@ -1,7 +1,7 @@
 import React from 'react'
 import './HomePageCSS.css'
 import figure_1 from '../../assets/imgs/dev-3.png';
-
+import row from '../../assets/imgs/row.png';
 
 export const HomePage = () => {
   return (
@@ -24,8 +24,12 @@ export const HomePage = () => {
         top: "-570px",
         right: "-470px",
       }}></div>
-      <div className='min-h-screen max-xl:pt-32 w-full relative flex max-xl:flex-col items-center justify-between'>
-        <div className='realtive min-w-[50%] max-xl:px-10 max-xl:flex max-xl:flex-col max-xl:justify-evenly max-xl:space-y-28'>
+      <div className='min-h-screen max-xl:pt-28 w-full relative flex max-xl:flex-col items-center justify-between'>
+        <div className='realtive min-w-[50%] max-xl:px-10 max-xl:flex max-xl:flex-col max-xl:justify-evenly max-xl:space-y-20'>
+          <div className='max-xl:hidden max-xl:h-0'>
+            <h2 className='font-linotype-pen text-[#7ed957] text-3xl absolute xl:top-44 xl:right-40'>click me</h2>
+            <img className='w-20 max-xl:w-14 animate-jump animate-infinite animate-duration-[2000ms] animate-delay-[1500ms] absolute xl:right-20 xl:top-28 max-xl:right-16' src={row} alt="" />
+          </div>
           <div className='xl:absolute xl:bottom-[40%] xl:left-[50%]'>
             <div className='xl:w-[600px] max-xl:w-full '>
               <h6 className='font-gotham text-[#9f9f9f] uppercase animate-fade-left animate-once animate-duration-1000'>HI, I AM MOGUE, I DEVELOPER</h6>
