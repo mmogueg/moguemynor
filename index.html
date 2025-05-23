@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="./css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap');
-        
+
         :root {
             --primary: #0f2922;
             --secondary: #1e3a34;
@@ -21,43 +20,47 @@
             --text: #f8fafc;
             --muted: #94a3b8;
         }
-        
+
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--primary);
             color: var(--text);
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Playfair Display', serif;
         }
-        
+
         .gradient-text {
             background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        
+
         .card {
             background: rgba(30, 58, 52, 0.5);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
         }
-        
+
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(16, 185, 129, 0.3);
         }
-        
+
         .project-card {
             perspective: 1000px;
             height: 300px;
         }
-        
+
         .project-card-inner {
             position: relative;
             width: 100%;
@@ -65,12 +68,13 @@
             transition: transform 0.8s;
             transform-style: preserve-3d;
         }
-        
+
         .project-card:hover .project-card-inner {
             transform: rotateY(180deg);
         }
-        
-        .project-card-front, .project-card-back {
+
+        .project-card-front,
+        .project-card-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -79,7 +83,7 @@
             border-radius: 0.75rem;
             overflow: hidden;
         }
-        
+
         .project-card-back {
             transform: rotateY(180deg);
             display: flex;
@@ -89,30 +93,38 @@
             padding: 2rem;
             background: linear-gradient(135deg, #1e3a34, #0f2922);
         }
-        
+
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
+
         .skill-pill {
             transition: all 0.3s ease;
         }
-        
+
         .skill-pill:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
         }
-        
+
         .timeline-item {
             position: relative;
         }
-        
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -122,7 +134,7 @@
             bottom: 0;
             left: 7px;
         }
-        
+
         .timeline-dot {
             position: absolute;
             width: 16px;
@@ -132,7 +144,7 @@
             left: 0;
             top: 5px;
         }
-        
+
         .canvas-container {
             position: absolute;
             top: 0;
@@ -141,7 +153,7 @@
             height: 100%;
             z-index: -1;
         }
-        
+
         .scroll-indicator {
             position: absolute;
             bottom: 30px;
@@ -149,18 +161,31 @@
             transform: translateX(-50%);
             animation: bounce 2s infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-20px) translateX(-50%); }
-            60% { transform: translateY(-10px) translateX(-50%); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
         }
-        
+
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -171,37 +196,37 @@
             background-color: var(--accent);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .testimonial-card {
             transition: all 0.5s ease;
         }
-        
+
         .testimonial-card:hover {
             transform: scale(1.03);
         }
-        
+
         .contact-input {
             background: rgba(30, 58, 52, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .contact-input:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
         }
-        
+
         .btn-primary {
             background: linear-gradient(90deg, #10b981, #34d399);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -212,18 +237,18 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: all 0.6s ease;
         }
-        
+
         .btn-primary:hover::before {
             left: 100%;
         }
-        
+
         /* 3D Cube Animation */
         .cube-wrapper {
             perspective: 1000px;
             width: 150px;
             height: 150px;
         }
-        
+
         .cube {
             width: 100%;
             height: 100%;
@@ -231,7 +256,7 @@
             transform-style: preserve-3d;
             animation: rotate 20s infinite linear;
         }
-        
+
         .cube-face {
             position: absolute;
             width: 150px;
@@ -246,47 +271,69 @@
             background: rgba(16, 185, 129, 0.2);
             backdrop-filter: blur(5px);
         }
-        
-        .front { transform: translateZ(75px); }
-        .back { transform: rotateY(180deg) translateZ(75px); }
-        .right { transform: rotateY(90deg) translateZ(75px); }
-        .left { transform: rotateY(-90deg) translateZ(75px); }
-        .top { transform: rotateX(90deg) translateZ(75px); }
-        .bottom { transform: rotateX(-90deg) translateZ(75px); }
-        
-        @keyframes rotate {
-            0% { transform: rotateX(0) rotateY(0); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
+
+        .front {
+            transform: translateZ(75px);
         }
-        
+
+        .back {
+            transform: rotateY(180deg) translateZ(75px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         ::-webkit-scrollbar-track {
             background: var(--primary);
         }
-        
+
         ::-webkit-scrollbar-thumb {
             background: var(--accent);
             border-radius: 4px;
         }
-        
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-dark);
         }
-        
+
         /* Mobile menu */
         .mobile-menu {
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .mobile-menu.open {
             transform: translateX(0);
         }
-        
+
         /* Progress bars */
         .progress-bar {
             height: 8px;
@@ -295,7 +342,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .progress-fill {
             height: 100%;
             border-radius: 4px;
@@ -305,9 +352,10 @@
         }
     </style>
 </head>
+
 <body class="min-h-screen w-full">
     <div id="canvas-container" class="canvas-container"></div>
-    
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-opacity-80 bg-emerald-950 backdrop-blur-md border-b border-emerald-800">
         <div class="container mx-auto px-4 py-4">
@@ -315,7 +363,7 @@
                 <div class="flex items-center">
                     <div class="text-2xl font-bold gradient-text">MG</div>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link text-slate-200 hover:text-emerald-400">Home</a>
@@ -326,23 +374,28 @@
                     <a href="#testimonials" class="nav-link text-slate-200 hover:text-emerald-400">Testimonials</a>
                     <a href="#contact" class="nav-link text-slate-200 hover:text-emerald-400">Contact</a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="menu-toggle" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-emerald-950 bg-opacity-95 z-40 flex flex-col justify-center items-center space-y-8 md:hidden">
+        <div id="mobile-menu"
+            class="mobile-menu fixed inset-0 bg-emerald-950 bg-opacity-95 z-40 flex flex-col justify-center items-center space-y-8 md:hidden">
             <button id="close-menu" class="absolute top-4 right-4 text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
                 </svg>
             </button>
             <a href="#home" class="text-xl text-white hover:text-emerald-400 mobile-link">Home</a>
@@ -365,14 +418,16 @@
                 </h1>
                 <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">Full Stack Developer & UI/UX Enthusiast</h2>
                 <p class="text-slate-400 text-lg mb-8 max-w-lg">
-                    Crafting premium digital experiences with cutting-edge technologies. 
+                    Crafting premium digital experiences with cutting-edge technologies.
                     Transforming ideas into elegant, scalable solutions.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="btn-primary px-8 py-3 rounded-full text-white font-medium shadow-lg shadow-emerald-500/30">
+                    <a href="#contact"
+                        class="btn-primary px-8 py-3 rounded-full text-white font-medium shadow-lg shadow-emerald-500/30">
                         Hire Me
                     </a>
-                    <a href="#projects" class="px-8 py-3 rounded-full text-white font-medium border border-emerald-500 hover:bg-emerald-500/10 transition-all">
+                    <a href="#projects"
+                        class="px-8 py-3 rounded-full text-white font-medium border border-emerald-500 hover:bg-emerald-500/10 transition-all">
                         View Projects
                     </a>
                 </div>
@@ -390,17 +445,23 @@
                             <div class="cube-face bottom"><i class="fab fa-docker"></i></div>
                         </div>
                     </div>
-                    
+
                     <!-- Decorative elements -->
-                    <div class="absolute -top-20 -right-20 w-40 h-40 bg-emerald-500 rounded-full filter blur-[100px] opacity-30"></div>
-                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-green-500 rounded-full filter blur-[100px] opacity-30"></div>
+                    <div
+                        class="absolute -top-20 -right-20 w-40 h-40 bg-emerald-500 rounded-full filter blur-[100px] opacity-30">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-40 h-40 bg-green-500 rounded-full filter blur-[100px] opacity-30">
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
-            <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
             </svg>
         </div>
     </section>
@@ -412,59 +473,72 @@
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
                 <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
             </div>
-            
+
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-emerald-500 mx-auto">
-                            <svg class="w-full h-full text-emerald-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        <div
+                            class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-emerald-500 mx-auto">
+                            <svg class="w-full h-full text-emerald-900" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                    clip-rule="evenodd"></path>
                             </svg>
                         </div>
-                        <div class="absolute -bottom-5 -right-5 w-40 h-40 bg-emerald-500 rounded-full filter blur-[80px] opacity-30"></div>
+                        <div
+                            class="absolute -bottom-5 -right-5 w-40 h-40 bg-emerald-500 rounded-full filter blur-[80px] opacity-30">
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="md:w-1/2 md:pl-10">
-                    <h3 class="text-2xl font-bold mb-4">Full Stack Developer with 8+ Years Experience</h3>
+                    <h3 class="text-2xl font-bold mb-4">Full Stack Developer with 4+ Years Experience</h3>
                     <p class="text-slate-300 mb-6">
-                        I specialize in building exceptional digital experiences that combine stunning front-end interfaces with robust back-end architecture. My passion lies in creating scalable, efficient solutions that solve real-world problems.
+                        I specialize in building exceptional digital experiences that combine stunning front-end
+                        interfaces with robust back-end architecture. My passion lies in creating scalable, efficient
+                        solutions that solve real-world problems.
                     </p>
                     <p class="text-slate-300 mb-6">
-                        With expertise spanning the entire development stack, I bring ideas to life using cutting-edge technologies while ensuring optimal performance, security, and user experience.
+                        With expertise spanning the entire development stack, I bring ideas to life using cutting-edge
+                        technologies while ensuring optimal performance, security, and user experience.
                     </p>
-                    
+
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="flex items-center">
                             <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
-                            <span class="text-slate-300">Based in San Francisco</span>
+                            <span class="text-slate-300">Based in Guatemala</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
-                            <span class="text-slate-300">8+ Years Experience</span>
+                            <span class="text-slate-300">4+ Years Experience</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
-                            <span class="text-slate-300">100+ Projects Completed</span>
+                            <span class="text-slate-300">50+ Projects Completed</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-3 h-3 bg-emerald-500 rounded-full mr-2"></div>
                             <span class="text-slate-300">Available for Freelance</span>
                         </div>
                     </div>
-                    
+
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                        <a href="https://github.com/mmogueg" target="_blank"
+                            class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                        <a href="https://www.linkedin.com/in/mynor-mogue-8b061533b/" target="_blank"
+                            class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://wa.me/50235689561?text=Hola%20Mynor,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte"
+                            target="_blank"
+                            class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
-                            <i class="fab fa-dribbble"></i>
+                        <a href="https://www.instagram.com/mmogueg/" target="_blank"
+                            class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -479,10 +553,11 @@
                 <h2 class="text-3xl md:text-5xl font-bold mb-4">Technical <span class="gradient-text">Skills</span></h2>
                 <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
                 <p class="text-slate-300 mt-6 max-w-2xl mx-auto">
-                    My expertise spans across various technologies and frameworks, allowing me to build comprehensive solutions from concept to deployment.
+                    My expertise spans across various technologies and frameworks, allowing me to build comprehensive
+                    solutions from concept to deployment.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="card p-8 rounded-xl">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
@@ -491,7 +566,7 @@
                         </span>
                         Frontend Development
                     </h3>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
@@ -502,7 +577,7 @@
                                 <div class="progress-fill" data-width="95%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">JavaScript / TypeScript</span>
@@ -512,7 +587,7 @@
                                 <div class="progress-fill" data-width="90%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">Tailwind / SCSS</span>
@@ -522,7 +597,7 @@
                                 <div class="progress-fill" data-width="85%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">Vue.js / Angular</span>
@@ -534,7 +609,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card p-8 rounded-xl">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
                         <span class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mr-3">
@@ -542,7 +617,7 @@
                         </span>
                         Backend Development
                     </h3>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
@@ -553,7 +628,7 @@
                                 <div class="progress-fill" data-width="90%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">Python / Django</span>
@@ -563,7 +638,7 @@
                                 <div class="progress-fill" data-width="85%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">SQL / NoSQL Databases</span>
@@ -573,7 +648,7 @@
                                 <div class="progress-fill" data-width="88%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">GraphQL / REST APIs</span>
@@ -585,7 +660,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card p-8 rounded-xl">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
                         <span class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mr-3">
@@ -593,7 +668,7 @@
                         </span>
                         DevOps & Cloud
                     </h3>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-2">
@@ -604,7 +679,7 @@
                                 <div class="progress-fill" data-width="85%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">Docker / Kubernetes</span>
@@ -614,7 +689,7 @@
                                 <div class="progress-fill" data-width="80%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">CI/CD Pipelines</span>
@@ -624,7 +699,7 @@
                                 <div class="progress-fill" data-width="78%"></div>
                             </div>
                         </div>
-                        
+
                         <div>
                             <div class="flex justify-between mb-2">
                                 <span class="text-slate-300">Infrastructure as Code</span>
@@ -636,7 +711,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card p-8 rounded-xl">
                     <h3 class="text-2xl font-bold mb-6 flex items-center">
                         <span class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mr-3">
@@ -644,20 +719,39 @@
                         </span>
                         Other Skills
                     </h3>
-                    
+
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">UI/UX Design</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Agile Methodology</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Project Management</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">TDD</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Microservices</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">System Architecture</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Performance Optimization</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Responsive Design</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">SEO</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Web Security</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">WebSockets</span>
-                        <span class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">PWA</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">UI/UX
+                            Design</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Agile
+                            Methodology</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Project
+                            Management</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">TDD</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Microservices</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">System
+                            Architecture</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Performance
+                            Optimization</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Responsive
+                            Design</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">SEO</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">Web
+                            Security</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">WebSockets</span>
+                        <span
+                            class="skill-pill px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-300 border border-emerald-500/30">PWA</span>
                     </div>
                 </div>
             </div>
@@ -668,19 +762,22 @@
     <section id="projects" class="py-20 bg-emerald-950">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Projects</span>
+                </h2>
                 <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
                 <p class="text-slate-300 mt-6 max-w-2xl mx-auto">
-                    A selection of my most impactful work. Each project represents unique challenges and innovative solutions.
+                    A selection of my most impactful work. Each project represents unique challenges and innovative
+                    solutions.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-emerald-600 to-green-500 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-emerald-600 to-green-500 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-shopping-cart"></i>
                                 </div>
@@ -692,20 +789,26 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">E-Commerce Platform</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with React, Node.js, and MongoDB. Features include real-time inventory, payment processing, and analytics dashboard.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with React, Node.js, and MongoDB. Features
+                                include real-time inventory, payment processing, and analytics dashboard.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-green-600 to-lime-500 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-green-600 to-lime-500 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-chart-line"></i>
                                 </div>
@@ -717,20 +820,26 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">Financial Dashboard</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with Vue.js and Django. Features include real-time data visualization, predictive analytics, and secure authentication.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with Vue.js and Django. Features include
+                                real-time data visualization, predictive analytics, and secure authentication.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-teal-600 to-emerald-500 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-teal-600 to-emerald-500 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-mobile-alt"></i>
                                 </div>
@@ -742,20 +851,26 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">Health & Fitness App</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with React Native and Firebase. Features include workout tracking, nutrition planning, and social community features.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with React Native and Firebase. Features
+                                include workout tracking, nutrition planning, and social community features.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-green-700 to-emerald-600 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-green-700 to-emerald-600 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-robot"></i>
                                 </div>
@@ -767,20 +882,26 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">AI Content Platform</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with Next.js and Python. Features include AI-powered content generation, SEO optimization, and content scheduling.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with Next.js and Python. Features include
+                                AI-powered content generation, SEO optimization, and content scheduling.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-lime-600 to-green-500 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-lime-600 to-green-500 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
@@ -792,20 +913,26 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">Learning Management System</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with Angular and Spring Boot. Features include course creation, student progress tracking, and interactive assessments.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with Angular and Spring Boot. Features
+                                include course creation, student progress tracking, and interactive assessments.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-card-inner">
                         <div class="project-card-front">
-                            <div class="h-full w-full bg-gradient-to-br from-emerald-700 to-green-600 p-6 flex flex-col justify-between">
+                            <div
+                                class="h-full w-full bg-gradient-to-br from-emerald-700 to-green-600 p-6 flex flex-col justify-between">
                                 <div class="text-4xl text-white mb-4">
                                     <i class="fas fa-comments"></i>
                                 </div>
@@ -817,21 +944,29 @@
                         </div>
                         <div class="project-card-back">
                             <h3 class="text-xl font-bold mb-3">Real-time Chat Application</h3>
-                            <p class="text-slate-300 mb-4 text-center">Built with Socket.io and Express. Features include end-to-end encryption, file sharing, and group conversations.</p>
+                            <p class="text-slate-300 mb-4 text-center">Built with Socket.io and Express. Features
+                                include end-to-end encryption, file sharing, and group conversations.</p>
                             <div class="flex space-x-3">
-                                <a href="#" class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View Demo</a>
-                                <a href="#" class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case Study</a>
+                                <a href="#"
+                                    class="px-4 py-2 bg-emerald-600 rounded-full text-sm text-white hover:bg-emerald-700 transition-all">View
+                                    Demo</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-emerald-500 rounded-full text-sm text-white hover:bg-emerald-500/20 transition-all">Case
+                                    Study</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-emerald-500 rounded-full text-emerald-400 hover:bg-emerald-500/10 transition-all">
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 border border-emerald-500 rounded-full text-emerald-400 hover:bg-emerald-500/10 transition-all">
                     View All Projects
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </a>
             </div>
@@ -848,7 +983,7 @@
                     My professional journey through various roles and companies in the tech industry.
                 </p>
             </div>
-            
+
             <div class="max-w-4xl mx-auto">
                 <!-- Experience Item 1 -->
                 <div class="timeline-item pl-8 pb-12">
@@ -862,18 +997,23 @@
                             </div>
                         </div>
                         <p class="text-slate-300 mb-4">
-                            Led the development of enterprise-level web applications using React, Node.js, and AWS. Managed a team of 5 developers and implemented CI/CD pipelines that reduced deployment time by 40%.
+                            Led the development of enterprise-level web applications using React, Node.js, and AWS.
+                            Managed a team of 5 developers and implemented CI/CD pipelines that reduced deployment time
+                            by 40%.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">React</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Node.js</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Node.js</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">AWS</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">MongoDB</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Docker</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">MongoDB</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Docker</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Experience Item 2 -->
                 <div class="timeline-item pl-8 pb-12">
                     <div class="timeline-dot"></div>
@@ -886,18 +1026,22 @@
                             </div>
                         </div>
                         <p class="text-slate-300 mb-4">
-                            Developed and maintained multiple client projects using Vue.js and Django. Implemented responsive designs and optimized database queries, improving application performance by 30%.
+                            Developed and maintained multiple client projects using Vue.js and Django. Implemented
+                            responsive designs and optimized database queries, improving application performance by 30%.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Vue.js</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Django</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">PostgreSQL</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Vue.js</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Django</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">PostgreSQL</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Redis</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Nginx</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Experience Item 3 -->
                 <div class="timeline-item pl-8 pb-12">
                     <div class="timeline-dot"></div>
@@ -910,18 +1054,23 @@
                             </div>
                         </div>
                         <p class="text-slate-300 mb-4">
-                            Created responsive and interactive user interfaces using Angular and SCSS. Collaborated with designers to implement pixel-perfect designs and improve user experience.
+                            Created responsive and interactive user interfaces using Angular and SCSS. Collaborated with
+                            designers to implement pixel-perfect designs and improve user experience.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Angular</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Angular</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">SCSS</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">JavaScript</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Webpack</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Jasmine</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">JavaScript</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Webpack</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">Jasmine</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Experience Item 4 -->
                 <div class="timeline-item pl-8">
                     <div class="timeline-dot"></div>
@@ -934,12 +1083,14 @@
                             </div>
                         </div>
                         <p class="text-slate-300 mb-4">
-                            Assisted in the development of websites and web applications using HTML, CSS, and JavaScript. Gained experience in responsive design and cross-browser compatibility.
+                            Assisted in the development of websites and web applications using HTML, CSS, and
+                            JavaScript. Gained experience in responsive design and cross-browser compatibility.
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">HTML5</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">CSS3</span>
-                            <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">jQuery</span>
+                            <span
+                                class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">jQuery</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">PHP</span>
                             <span class="px-3 py-1 bg-emerald-500/20 rounded-full text-xs text-emerald-300">MySQL</span>
                         </div>
@@ -953,13 +1104,14 @@
     <section id="testimonials" class="py-20 bg-emerald-950">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span>
+                </h2>
                 <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
                 <p class="text-slate-300 mt-6 max-w-2xl mx-auto">
                     What clients and colleagues have to say about working with me.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card card p-8 rounded-xl">
@@ -969,7 +1121,8 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-6 text-center">
-                        "Alex delivered our e-commerce platform ahead of schedule and exceeded all our expectations. The attention to detail and performance optimization was impressive."
+                        "Alex delivered our e-commerce platform ahead of schedule and exceeded all our expectations. The
+                        attention to detail and performance optimization was impressive."
                     </p>
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
@@ -979,7 +1132,7 @@
                         <p class="text-slate-400">CEO, RetailTech</p>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card card p-8 rounded-xl">
                     <div class="flex justify-center mb-6">
@@ -988,7 +1141,8 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-6 text-center">
-                        "Working with Alex was a game-changer for our startup. The financial dashboard he built has become central to our operations and decision-making process."
+                        "Working with Alex was a game-changer for our startup. The financial dashboard he built has
+                        become central to our operations and decision-making process."
                     </p>
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
@@ -998,7 +1152,7 @@
                         <p class="text-slate-400">Founder, FinanceAI</p>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card card p-8 rounded-xl">
                     <div class="flex justify-center mb-6">
@@ -1007,7 +1161,8 @@
                         </div>
                     </div>
                     <p class="text-slate-300 mb-6 text-center">
-                        "Alex's technical expertise and problem-solving skills are exceptional. He quickly understood our complex requirements and delivered a solution that was both elegant and efficient."
+                        "Alex's technical expertise and problem-solving skills are exceptional. He quickly understood
+                        our complex requirements and delivered a solution that was both elegant and efficient."
                     </p>
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-3">
@@ -1031,15 +1186,16 @@
                     Have a project in mind? Let's discuss how I can help bring your ideas to life.
                 </p>
             </div>
-            
+
             <div class="flex flex-col md:flex-row gap-10 max-w-6xl mx-auto">
                 <div class="md:w-1/2">
                     <div class="card p-8 rounded-xl h-full">
                         <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                        
+
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
                                     <i class="fas fa-envelope text-emerald-400"></i>
                                 </div>
                                 <div>
@@ -1047,9 +1203,10 @@
                                     <p class="text-slate-300">moguemynor@gmail.com</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
                                     <i class="fas fa-phone text-emerald-400"></i>
                                 </div>
                                 <div>
@@ -1057,9 +1214,10 @@
                                     <p class="text-slate-300">(+502) 3568-9561</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
                                     <i class="fas fa-map-marker-alt text-emerald-400"></i>
                                 </div>
                                 <div>
@@ -1067,9 +1225,10 @@
                                     <p class="text-slate-300">Amatitlan, Guatemala, Guatemala</p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 shrink-0">
                                     <i class="fas fa-clock text-emerald-400"></i>
                                 </div>
                                 <div>
@@ -1078,52 +1237,65 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="mt-8">
                             <h4 class="text-lg font-medium mb-4">Connect With Me</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                                <a href="https://github.com/mmogueg" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                                <a href="https://www.linkedin.com/in/mynor-mogue-8b061533b/" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="https://wa.me/50235689561?text=Hola%20Mynor,%20vi%20tu%20portafolio%20y%20me%20interesa%20contactarte"
+                                    target="_blank"
+                                    class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
-                                    <i class="fab fa-dribbble"></i>
+                                <a href="https://www.instagram.com/mmogueg/" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-emerald-900 flex items-center justify-center text-white hover:bg-emerald-600 transition-all">
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="md:w-1/2">
                     <div class="card p-8 rounded-xl">
                         <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
-                        
+
                         <form id="contact-form" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-slate-300 mb-2">Name</label>
-                                <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none" placeholder="Your name">
+                                <input type="text" id="name"
+                                    class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none"
+                                    placeholder="Your name">
                             </div>
-                            
+
                             <div>
                                 <label for="email" class="block text-slate-300 mb-2">Email</label>
-                                <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none" placeholder="Your email">
+                                <input type="email" id="email"
+                                    class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none"
+                                    placeholder="Your email">
                             </div>
-                            
+
                             <div>
                                 <label for="subject" class="block text-slate-300 mb-2">Subject</label>
-                                <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none" placeholder="Subject">
+                                <input type="text" id="subject"
+                                    class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none"
+                                    placeholder="Subject">
                             </div>
-                            
+
                             <div>
                                 <label for="message" class="block text-slate-300 mb-2">Message</label>
-                                <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none resize-none" placeholder="Your message"></textarea>
+                                <textarea id="message" rows="5"
+                                    class="contact-input w-full px-4 py-3 rounded-lg text-white focus:outline-none resize-none"
+                                    placeholder="Your message"></textarea>
                             </div>
-                            
+
                             <div>
                                 <button type="submit" class="btn-primary w-full py-3 rounded-lg text-white font-medium">
                                     Send Message
@@ -1144,7 +1316,7 @@
                     <div class="text-2xl font-bold gradient-text mb-2">MG</div>
                     <p class="text-slate-400">Full Stack Developer</p>
                 </div>
-                
+
                 <div class="text-center md:text-right">
                     <p class="text-slate-400">&copy; 2025 Mynor Mogue. All rights reserved.</p>
                     <p class="text-slate-500 text-sm mt-1">Designed and built with passion</p>
@@ -1159,49 +1331,49 @@
             const canvas = document.createElement('canvas');
             canvas.id = 'background-canvas';
             document.getElementById('canvas-container').appendChild(canvas);
-            
+
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
-            
+
             // Create particles
             const particlesGeometry = new THREE.BufferGeometry();
             const particlesCount = 1000;
-            
+
             const posArray = new Float32Array(particlesCount * 3);
-            
-            for(let i = 0; i < particlesCount * 3; i++) {
+
+            for (let i = 0; i < particlesCount * 3; i++) {
                 posArray[i] = (Math.random() - 0.5) * 10;
             }
-            
+
             particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-            
+
             const particlesMaterial = new THREE.PointsMaterial({
                 size: 0.02,
                 color: 0x10b981,
                 transparent: true,
                 opacity: 0.8
             });
-            
+
             const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
             scene.add(particlesMesh);
-            
+
             camera.position.z = 5;
-            
+
             // Animation
             const animate = () => {
                 requestAnimationFrame(animate);
-                
+
                 particlesMesh.rotation.x += 0.0005;
                 particlesMesh.rotation.y += 0.0005;
-                
+
                 renderer.render(scene, camera);
             };
-            
+
             animate();
-            
+
             // Handle resize
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
@@ -1209,11 +1381,11 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
         };
-        
+
         // Initialize progress bars
         const initProgressBars = () => {
             const progressFills = document.querySelectorAll('.progress-fill');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1222,61 +1394,61 @@
                     }
                 });
             }, { threshold: 0.1 });
-            
+
             progressFills.forEach(fill => {
                 observer.observe(fill);
             });
         };
-        
+
         // Mobile menu functionality
         const initMobileMenu = () => {
             const menuToggle = document.getElementById('menu-toggle');
             const closeMenu = document.getElementById('close-menu');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
-            
+
             menuToggle.addEventListener('click', () => {
                 mobileMenu.classList.add('open');
             });
-            
+
             closeMenu.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
             });
-            
+
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.remove('open');
                 });
             });
         };
-        
+
         // Contact form functionality
         const initContactForm = () => {
             const form = document.getElementById('contact-form');
-            
+
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 // In a real application, you would send the form data to a server
                 // For this demo, we'll just show a success message
-                
+
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const subject = document.getElementById('subject').value;
                 const message = document.getElementById('message').value;
-                
+
                 if (name && email && subject && message) {
                     // Create success message
                     const successMessage = document.createElement('div');
                     successMessage.className = 'p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 mt-4';
                     successMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-                    
+
                     // Add to form
                     form.appendChild(successMessage);
-                    
+
                     // Reset form
                     form.reset();
-                    
+
                     // Remove message after 5 seconds
                     setTimeout(() => {
                         successMessage.remove();
@@ -1286,10 +1458,10 @@
                     const errorMessage = document.createElement('div');
                     errorMessage.className = 'p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-400 mt-4';
                     errorMessage.textContent = 'Please fill in all fields.';
-                    
+
                     // Add to form
                     form.appendChild(errorMessage);
-                    
+
                     // Remove message after 5 seconds
                     setTimeout(() => {
                         errorMessage.remove();
@@ -1297,18 +1469,18 @@
                 }
             });
         };
-        
+
         // Smooth scrolling for navigation links
         const initSmoothScroll = () => {
             const links = document.querySelectorAll('a[href^="#"]');
-            
+
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    
+
                     const targetId = link.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
+
                     if (targetElement) {
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
@@ -1318,7 +1490,7 @@
                 });
             });
         };
-        
+
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof THREE !== 'undefined') {
@@ -1330,7 +1502,9 @@
             initSmoothScroll();
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9446412d14fbb0b3',t:'MTc0ODAyMTE0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='./js/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9446412d14fbb0b3',t:'MTc0ODAyMTE0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='./js/maind41d.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
 
 <!-- Mirrored from bc55s8rm0kva3wyp.canva-hosted-embed.com/codelet/AAEAEGJjNTVzOHJtMGt2YTN3eXAAAAAAAZcC7WLnh24RXK596PSat43qq1AQfVWPwQY5znpL8mK2Rt3BoBI/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 May 2025 17:25:50 GMT -->
+
 </html>
